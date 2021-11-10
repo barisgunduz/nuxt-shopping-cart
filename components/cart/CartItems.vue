@@ -8,108 +8,24 @@
             <th class="text-center">Sil</th>
         </thead>
         <tbody>
-            <tr class="bg-custom-color">
-                <td class="p-2">Keçi Peyniri</td>
-                <td class="p-2 text-center w-25">
-                    <div class="d-flex flex-row justify-content-center p-0 m-0">
-                        <button class="btn btn-sm btn-outline-danger rounded-0">
-                            -
-                        </button>
-                        <input
-                            disabled
-                            type="text"
-                            class="
-                                form-control form-control-sm
-                                w-25
-                                text-center
-                                rounded-0
-                                border-left-0 border-right-0
-                            "
-                            value="1"
-                        />
-                        <button
-                            class="btn btn-sm btn-outline-success rounded-0"
-                        >
-                            +
-                        </button>
-                    </div>
-                </td>
-                <td class="p-2 text-center">10,00₺</td>
-                <td class="p-2 text-center">10,00₺</td>
-                <td class="p-2 text-center">
-                    <button class="btn btn-sm btn-danger">Sil</button>
-                </td>
-            </tr>
-            <tr>
-                <td class="p-2">Keçi Peyniri</td>
-                <td class="p-2 text-center w-25">
-                    <div class="d-flex flex-row justify-content-center p-0 m-0">
-                        <button class="btn btn-sm btn-outline-danger rounded-0">
-                            -
-                        </button>
-                        <input
-                            disabled
-                            type="text"
-                            class="
-                                form-control form-control-sm
-                                w-25
-                                text-center
-                                rounded-0
-                                border-left-0 border-right-0
-                            "
-                            value="1"
-                        />
-                        <button
-                            class="btn btn-sm btn-outline-success rounded-0"
-                        >
-                            +
-                        </button>
-                    </div>
-                </td>
-                <td class="p-2 text-center">10,00₺</td>
-                <td class="p-2 text-center">10,00₺</td>
-                <td class="p-2 text-center">
-                    <button class="btn btn-sm btn-danger">Sil</button>
-                </td>
-            </tr>
-            <tr class="bg-custom-color">
-                <td class="p-2">Keçi Peyniri</td>
-                <td class="p-2 text-center w-25">
-                    <div class="d-flex flex-row justify-content-center p-0 m-0">
-                        <button class="btn btn-sm btn-outline-danger rounded-0">
-                            -
-                        </button>
-                        <input
-                            disabled
-                            type="text"
-                            class="
-                                form-control form-control-sm
-                                w-25
-                                text-center
-                                rounded-0
-                                border-left-0 border-right-0
-                            "
-                            value="1"
-                        />
-                        <button
-                            class="btn btn-sm btn-outline-success rounded-0"
-                        >
-                            +
-                        </button>
-                    </div>
-                </td>
-                <td class="p-2 text-center">10,00₺</td>
-                <td class="p-2 text-center">10,00₺</td>
-                <td class="p-2 text-center">
-                    <button class="btn btn-sm btn-danger">Sil</button>
-                </td>
-            </tr>
+            <CartItem v-for="item in cart" :item="item" :key="item.id" />
         </tbody>
     </table>
 </template>
 
 <script>
-export default {};
+import CartItem from "@/components/cart/CartItem";
+export default {
+    components: {
+        CartItem
+    },
+    props: {
+        cart: {
+            type: Array,
+            required: false,
+        },
+    },
+};
 </script>
 
 <style></style>

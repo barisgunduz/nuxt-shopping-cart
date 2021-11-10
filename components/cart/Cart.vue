@@ -1,8 +1,8 @@
 <template>
     <div class="cart-container card shadow">
         <h3 class="text-center">Sepet</h3>
-        <Alert />
-        <CartItems />
+        <Alert v-if="cart.length == 0 || !cart" />
+        <CartItems v-else :cart="cart" />
         <CartFooter />
     </div>
 </template>
@@ -17,6 +17,12 @@ export default {
         CartItems,
         CartFooter,
     },
+    props : {
+        cart : {
+            type:  Array,
+            required : false
+        }
+    }
 };
 </script>
 

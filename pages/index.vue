@@ -7,8 +7,8 @@
             class="d-flex pt-3 justify-content-center"
             style="height: 100%"
         >
-			<Products />
-			<Cart />
+			<Products :products="products" />
+			<Cart :cart="cart" />
 		</div>
     </div>
 </template>
@@ -19,7 +19,15 @@ import Cart from "@/components/cart/Cart"
 export default {
 	components:{
 		Cart, Products
-	}
+	},
+    computed: {
+        products(){
+            return this.$store.getters.getProducts
+        },
+        cart(){
+            return this.$store.getters.getCarts
+        }
+    }
 };
 </script>
 

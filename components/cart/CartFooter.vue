@@ -10,13 +10,21 @@
             "
         >
             <strong style="font-size: 18px">Toplam Tutar : </strong>
-            <span class="badge total-price-container rounded-0">100,00₺</span>
+            <span class="badge total-price-container rounded-0"
+                >{{ cartTotalPrice.toFixed(2) }}₺</span
+            >
         </div>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+    computed: {
+        cartTotalPrice() {
+            return this.$store.getters.getTotalPrice;
+        },
+    },
+};
 </script>
 
 <style></style>
